@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card text-white bg-primary">
+    <table class="table table-bordered col">
+      <thead class="thead-dark">
+         
+        <tr>
+          <th>busId</th>
+          <th>userId</th>
+          <th>Date</th>
+          <th>NUmber of seat</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Booking Id</th>
+          <th>Available</th>
+        </tr>
+        <tr *ngFor="let allocation of userService.viewallticket">
+          <td>{{allocation.busId}}</td>
+          <td>{{allocation.userId}}</td>
+          <td>{{allocation.date}}</td>
+          <td>{{allocation.numberOfSeats}}</td>
+          <td>{{allocation.source}}</td>
+          <td>{{allocation.Destination}}</td>
+          <td>{{allocation.bookingId}}</td>
+          <td>{{allocation.available}}</td>
+        </tr>
+      </thead>
+    </table>
+  </div> 
+  </div> 
+ 

@@ -1,0 +1,55 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5" *ngIf="!isShowable">
+    <form #bookingId="ngForm" (ngSubmit)="user( bookingId.value.id)">
+        <h1>YOUR TICKET</h1>
+
+        <div class="form-group">
+            <label for="id">Enter booking_id :</label>
+            <input type="number" #id="ngModel" ngModel name="id" id="id" class="form-control" required>
+             <div *ngIf="id.touched && id.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div> 
+        </div>
+            <button type="submit" class="btn btn-primary" [disabled]=" bookingId.invalid">Login </button>
+ 
+
+    </form>
+</div>
+
+
+
+<div class="col-md-6 offset-3 mt-5 card card-body" *ngIf="isShowable" style="background-image: url('https://cdn.pixabay.com/photo/2016/01/19/15/48/luggage-1149289__340.jpg') ">
+  <h1>BusId : {{userService.viewallassets.busId}}</h1>
+  <h1>{{userService.viewallassets.bookingId}}</h1>
+  <h1>{{userService.viewallassets.date}}</h1>
+  <h1>{{userService.viewallassets.destination}}</h1>
+  <h1>{{userService.viewallassets.numOfSeats}}</h1>
+  <h1>{{userService.viewallassets.source}}</h1>
+  <h1>{{userService.viewallassets.userId}}</h1>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container">
+  
+    <div class="col-md-4 float-left card card-body" *ngFor="let asset of userService.viewallassets">
+       <h4 class="text-center">
+        {{asset.busId}}</h4>
+      <h5>{{asset.source}}</h5>
+      <h5>{{asset.destination}}</h5>
+      <h6>{{asset.date}}</h6>
+      <p>{{asset.numOfSeats}}</p>
+      <p>{{asset.userId}}</p>
+  
+      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong"
+        (click)="selectViewallassets(asset)">
+        Update
+      </button>
+    </div>
+</div> -->

@@ -1,0 +1,32 @@
+<body style="height: 550px">
+    
+
+<div class="col-md-5 offset-md-4 card card-body mt-5" style="background: transparent">
+    <form #loginAdmin="ngForm" (ngSubmit)="adminForm(loginAdmin)">
+        <h1>Admin Login</h1>
+
+        <div class="form-group">
+            <label for="adminId"> adminId :</label>
+            <input type="number" #adminId="ngModel" ngModel name="adminId" id="adminId" class="form-control" required>
+            <div *ngIf="adminId.touched && adminId.invalid" >
+                    <p class="alert alert-danger" > ***It's required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password"> Password :</label>
+            <input type="password" #password="ngModel" ngModel name="password" id="destination" class="form-control"
+                required>
+            <div *ngIf="password.touched && password.invalid" >
+                    <p class="alert alert-danger" > ***It's required</p>
+            </div>
+        </div>
+
+        
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="loginAdmin.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>

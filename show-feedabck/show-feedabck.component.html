@@ -1,0 +1,18 @@
+
+<div class="container">
+  
+    <div class="col-md-4 float-left card card-body" *ngFor="let asset of userService.viewallassets">
+       <h4 class="text-center">
+        {{asset.busId}}</h4>
+      <h5>{{asset.source}}</h5>
+      <h5>{{asset.destination}}</h5>
+      <h6>{{asset.date}}</h6>
+      <p>{{asset.numOfSeats}}</p>
+      <p>{{asset.userId}}</p>
+  
+      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong"
+        (click)="selectViewallassets(asset)">
+        Update
+      </button>
+    </div>
+</div>

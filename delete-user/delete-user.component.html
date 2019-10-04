@@ -1,0 +1,32 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #deleteUser="ngForm" (ngSubmit)="user(deleteUser.value.userId,deleteUser.value.password)">
+        <h1>Delete USER</h1>
+
+        <div class="form-group">
+            <label for="userId">Enter userId :</label>
+            <input type="number" #userId="ngModel" ngModel name="userId" id="userId" class="form-control" required>
+            <div *ngIf="userId.touched && userId.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="password">Enter Password :</label>
+            <input type="password" #password="ngModel" ngModel name="password" id="password" class="form-control"
+                required>
+            <div *ngIf="password.touched && password.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="deleteUser.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>
+ 
+

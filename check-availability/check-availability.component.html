@@ -1,0 +1,33 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+  <form #checkAvailibility="ngForm" (ngSubmit)="update(checkAvailibility.value.bus_id,checkAvailibility.value.journeyDate)">
+      <h1>CHECK AVAILABILITY</h1>
+
+      
+
+      <div class="form-group">
+          <label for="bus_id">Enter bus_id :</label>
+          <input type="text" #bus_id="ngModel" ngModel name="bus_id" id="bus_id" class="form-control"
+              required>
+          <div *ngIf="bus_id.touched && bus_id.invalid" >
+                  <p class="alert alert-danger" > This field is required</p>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="journeyDate">Enter journeyDate :</label>
+          <input type="date" #journeyDate="ngModel" ngModel name="journeyDate" id="journeyDate" class="form-control"
+              required>
+          <div *ngIf="journeyDate.touched && journeyDate.invalid" >
+                  <p class="alert alert-danger" > This field is required</p>
+          </div>
+      </div>
+
+     
+
+      
+      <!-- <div class="btn-group col-md-12"> -->
+          <button type="submit" class="btn btn-primary" [disabled]="checkAvailibility.invalid">Login </button>
+      <!-- </div> -->
+
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #busBetween="ngForm" (ngSubmit)="update(busBetween.value.source,busBetween.value.destination)">
+        <h1>BUS BETWEEN</h1>
+
+        
+
+        <div class="form-group">
+            <label for="source">Enter source :</label>
+            <input type="text" #source="ngModel" ngModel name="source" id="source" class="form-control"
+                required>
+            <div *ngIf="source.touched && source.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Enter Destination :</label>
+            <input type="text" #destination="ngModel" ngModel name="destination" id="destination" class="form-control"
+                required>
+            <div *ngIf="destination.touched && destination.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+       
+ 
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="busBetween.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>

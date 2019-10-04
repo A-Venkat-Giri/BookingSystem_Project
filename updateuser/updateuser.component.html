@@ -1,0 +1,58 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #updateUser="ngForm" (ngSubmit)="user(updateUser)">
+        <h1>Update User</h1>
+
+        <div class="form-group">
+            <label for="userId">Enter userId :</label>
+            <input type="number" #userId="ngModel" ngModel name="userId" id="userId" class="form-control" required>
+            <div *ngIf="userId.touched && userId.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="userName">Enter Name :</label>
+            <input type="text" #userName="ngModel" ngModel name="userName" id="password" class="form-control"
+                required>
+            <div *ngIf="userName.touched && userName.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter email :</label>
+            <input type="email" #email="ngModel" ngModel name="email" id="email" class="form-control"
+                required>
+            <div *ngIf="email.touched && email.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Enter Password :</label>
+            <input type="password" #password="ngModel" ngModel name="password" id="password" class="form-control"
+                required>
+            <div *ngIf="password.touched && password.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="contact">Enter Contact Number :</label>
+            <input type="number" #contact="ngModel" ngModel name="contact" id="contact" class="form-control"
+                required>
+            <div *ngIf="contact.touched && contact.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+      
+
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="updateUser.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>
+ 
+

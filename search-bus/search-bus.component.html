@@ -1,0 +1,65 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5" *ngIf="!show">
+    <form #searchBus="ngForm" (ngSubmit)="user(searchBus.value.source,searchBus.value.destination , searchBus.value.date)">
+        <h1>Search BUS</h1>
+
+        <div class="form-group">
+            <label for="source">Enter source :</label>
+            <input type="text" #source="ngModel" ngModel name="source" id="source" class="form-control" required>
+            <div *ngIf="source.touched && source.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Enter destination :</label>
+            <input type="text" #destination="ngModel" ngModel name="destination" id="password" class="form-control"
+                required>
+            <div *ngIf="destination.touched && destination.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Enter date :</label>
+            <input type="date" #date="ngModel" ngModel name="date" id="date" class="form-control"
+                required>
+            <div *ngIf="date.touched && date.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        
+      
+
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="searchBus.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>
+
+<div class="col-md-8 offset-2 mt-5" *ngIf="show">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>BusId</th>
+            <th>BusName</th>
+            <th>BusType</th>
+            <th>Destination</th>
+            <th>Price</th>
+            <th>Source</th>
+            <th>Total Seats</th>
+        </tr>
+        <tr *ngFor="let bus of Buses">
+            <td>{{bus.busId}}</td>
+            <td>{{bus.busName}}</td>
+            <td>{{bus.destination}}</td>
+            <td>{{bus.price}}</td>
+            <td>{{bus.source}}</td>
+            <td>{{bus.totalSeats}}</td>
+            <td>
+                <button class="btn btn-outline-success" (click)="selectBus()" routerLink="/selectseat">Book Bus</button>
+            </td>
+        </tr>
+    </table>
+</div>

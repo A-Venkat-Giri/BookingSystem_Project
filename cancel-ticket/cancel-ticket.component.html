@@ -1,0 +1,24 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #cancelTicket="ngForm" (ngSubmit)="user(cancelTicket.value.bookingId)">
+        <h1>CANCEL TICKET</h1>
+
+        <div class="form-group">
+            <label for="bookingId">Enter bookingId :</label>
+            <input type="number" #bookingId="ngModel" ngModel name="bookingId" id="bookingId" class="form-control" required>
+            <div *ngIf="bookingId.touched && bookingId.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+
+        
+      
+
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="cancelTicket.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>
+ 
+

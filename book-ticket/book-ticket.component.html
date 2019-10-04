@@ -1,0 +1,90 @@
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #bookTicket="ngForm" (ngSubmit)="user(bookTicket)">
+        <h1>Book Ticket</h1>
+
+        <div class="form-group">
+            <label for="busId">Enter busId :</label>
+            <input type="number" #busId="ngModel" ngModel name="busId" id="busId" class="form-control" required>
+            <div *ngIf="busId.touched && busId.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="userId">Enter user id :</label>
+            <input type="text" #userId="ngModel" ngModel name="userId" id="numberOfSeats" class="form-control"
+                required>
+            <div *ngIf="userId.touched && userId.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Enter date :</label>
+            <input type="date" #date="ngModel" ngModel name="date" id="date" class="form-control"
+                required>
+            <div *ngIf="date.touched && date.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="numberOfSeats">Enter numberOfSeats :</label>
+            <input type="number" #numberOfSeats="ngModel" ngModel name="numberOfSeats" id="numberOfSeats" class="form-control"
+                required>
+            <div *ngIf="numberOfSeats.touched && numberOfSeats.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="source">Enter source  :</label>
+            <input type=text" #source="ngModel" ngModel name="source" id="source" class="form-control"
+                required>
+            <div *ngIf="source.touched && source.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <label for="source">Enter source :</label>
+            <input type="text" #source="ngModel" ngModel name="source" id="numberOfSeats" class="form-control"
+                required>
+            <div *ngIf="source.touched && source.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Enter DESTINATION :</label>
+            <input type="text" #destination="ngModel" ngModel name="destination" id="destination" class="form-control" required>
+            <div *ngIf="destination.touched && destination.invalid" >
+                    <p class="alert alert-danger" > *This field is required</p>
+            </div>
+        </div>
+<!-- 
+        <div class="form-group">
+            <label for="bookingId">Enter Name :</label>
+            <input type="text" #bookingId="ngModel" ngModel name="bookingId" id="password" class="form-control"
+                required>
+            <div *ngIf="bookingId.touched && bookingId.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+        </div> -->
+<!-- 
+        <div class="form-group">
+            <label for="available">Enter available :</label>
+            <input type="text" #available="ngModel" ngModel name="available" id="available" class="form-control"
+                required>
+            <div *ngIf="available.touched && available.invalid" >
+                    <p class="alert alert-danger" > This field is required</p>
+            </div>
+</div> -->
+        
+        <!-- <div class="btn-group col-md-12"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="bookTicket.invalid">Login </button>
+        <!-- </div> -->
+
+    </form>
+</div>
+ 
+
